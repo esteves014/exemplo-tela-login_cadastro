@@ -1,0 +1,165 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: x-large;
+}
+
+span {
+    display: block;
+    margin-top: 8px;
+
+    label {
+
+        i {
+            color: red;
+        }
+    }
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.forms {
+    width: max-content;
+    height: max-content;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+    margin: 40px auto;
+    padding: 10px;
+
+    .top {
+        color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        height: max-content;
+        display: flex;
+        width: max-content;
+        margin: auto;
+        gap: 20px;
+        align-items: center;
+
+        img {
+            height: 60px;
+            width: auto;
+        }
+    }
+
+    form {
+        gap: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 600px;
+        height: max-content;
+        padding: 10px;
+        flex-wrap: wrap;
+        text-align: left;
+
+        input {
+            background-color: rgba(245, 245, 245, 0.25);
+            outline: none;
+            padding: 8px;
+            border: 0;
+            border-radius: 3px;
+            border: 1px solid red;
+            width: 250px;
+        }
+
+        input:focus {
+            border: 1px solid rgb(0, 195, 255);
+            box-shadow: 0px 0px 8px 0px rgb(0, 195, 255, 0.7);
+        }
+
+        input[type="checkbox"]{
+            display: none;
+        }
+
+        button {
+            background-color: transparent;
+            background-color: rgb(0, 215, 0);
+            border: 0px;
+            color: white;
+            padding: 12px 90px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .forms {
+        margin: auto;
+        flex-direction: column;
+        width: 300px;
+
+        form {
+            gap: 20px;
+            display: block;
+            margin: auto;
+            width: 300px;
+            height: max-content;
+            align-items: center;
+            height: max-content;
+        }
+    }
+}
+
+.switch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.switch .switch-wrapper {
+
+    width: 46px;
+    height: 34px;
+    position: relative;
+}
+
+.switch .switch-wrapper .switch-button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+    background-color: red;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.switch .switch-wrapper .switch-button::before{
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 4px;
+    border-radius: 50%;
+    transition: .4s all ease;
+    background-color: white;
+}
+
+.switch .switch-wrapper input:checked + .switch-button{
+    background-color: rgb(0, 200, 0);
+}
+
+
+.switch .switch-wrapper input:checked + .switch-button::before{
+    transform: translateX(20px);
+    background-color: white;
+    transition: .4s all ease;
+}
